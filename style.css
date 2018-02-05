@@ -1,0 +1,852 @@
+/* Base styles */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Gill Sans", Calibri, Optima, "PT Sans", Helvetica, Arial, sans-serif;
+	font-size: 1.25em;
+	background-color: #f6eec4;
+}
+
+h1 {
+	font-family: "Playball", cursive;
+	line-height: 0.7;
+}
+
+h2 {
+	font-size: 1.75em;
+}
+
+.cssfacts	{
+	font-family: "Droid Sans Mono", monospace; 
+}
+
+.keyword {
+	font-family: "Playball", cursive;
+	color: #fbf8e7;
+}
+
+img {
+	max-width: 100%;
+}
+
+.wrapper {
+	margin: 5em 0 10em;
+}
+
+/* BORDERS */
+.shelf:first-of-type {
+	border-width: 5px 1px 1px 5px;
+	border-color: #bf0606 #f6a004 #f6a004 #ca2506;
+}
+
+.shelf:nth-of-type(3) {
+	border-width: 1px 1px 1px 5px;
+	border-color: #f6a004 #f6a004 #f6a004 #d54405;
+}
+
+.shelf:nth-of-type(5) {
+	border-width: 1px 1px 1px 5px;
+	border-color: #f6a004 #f6a004 #f6a004 #d54405;
+}
+
+.shelf:last-of-type {
+	border-width: 1px 1px 5px 5px;
+	border-color: #f6a004 #f6a004 #f6a004 #eb8104;
+}
+
+.box {
+	border: 1px solid #f6a004;
+}
+
+.humble,
+.work {
+	border: 1px solid #bf0606;
+}
+
+/* inbetweens */
+.between:nth-of-type(2), .between:nth-of-type(4), .between:nth-of-type(6) {
+	border-width: 0 1px;
+	border-color: transparent #f6a004;
+}
+
+/* First Shelf */
+.designer {
+	text-align: center;
+	font-style: italic; 
+}
+
+.designer p:first-child {
+	color: #f6a004;
+	font-size: 3.5em;
+	padding: 0.2em 0 0 0;
+}
+
+.designer p:nth-child(2) {
+	color: #bf0606;
+	font-size: 2em;
+	padding: 0.2em 0 0 0;
+}
+
+/* Third Shelf */
+blockquote {
+	padding-top: 0.7em;
+}
+
+blockquote p {
+	line-height: 1.4;
+	font-size: 1.2em;
+	color: #bf0606;
+}
+blockquote cite {
+	font-size: 1.1em;
+	color: #f6a004;	
+}
+
+blockquote p:first-child {
+	padding-left: 4em;
+	color: #bf0606;
+}
+
+blockquote p:nth-child(2) {
+	padding-left: 6em;
+	color: #db5305;
+}
+
+blockquote p:nth-child(3) {
+	padding-left: 8em;
+	color: #f6a004;
+}
+
+
+/* 320+ 
+------------------------------------------ */
+@media only screen and (min-width: 18em) {
+ 	h1 {
+ 		display: block;
+ 		font-size: 2em;
+ 		margin: 0 auto;
+ 		padding-left: 1em;
+ 	}
+
+ 	.keyword {
+ 		font-size: 1.25em;
+ 	}
+
+ 	.between {
+ 		visibility: collapse;
+ 	}
+
+ 	/* General shelf styles */
+	.shelf {
+		display: grid;
+		grid-gap: 1em;
+		grid-template-columns: repeat(1, 1fr);
+		margin: 0 auto;
+		max-width: 80%;
+		background-color: #f2f2f2;
+		grid-auto-rows: minmax(10em, auto);
+		border: 0.1em solid #bcaf9b;
+	}
+
+	.box {
+		padding: 1em;
+		background-color: #f6eec4;
+	}
+
+	/* First shelf */
+ 	.designer {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+		margin: 0.75em 0.75em 0;
+	}
+
+	.resourceful,
+	.creative,
+	.stubborn {
+		grid-column: 1 / span 1;
+		grid-row: 2 / span 1;
+		margin: 0 1em 1em;
+	}
+
+	.resourceful {
+		text-align: left;
+		background: #f6a004;
+		padding-left: 2em;
+	}
+
+	.creative {
+		background: none;
+		text-align: right;
+		padding-top: 3em;
+		padding-right: 2em;
+	}
+
+	.stubborn {
+		background: none;
+		text-align: center;
+		padding-top: 5em;
+	}
+
+	/* Second shelf*/
+	.cssfacts {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+		margin: 1em;
+		line-height: 1.2;
+		font-size: 0.7em;
+		overflow: hidden;
+	}
+
+	.work,
+	.humble {
+		grid-column: 1 / span 1;
+		grid-row: 2 / span 1;
+		margin: 0 1em 1em;
+	}
+
+	.work {
+		text-align: left;
+		background: #bf0606;
+		padding-top: 1.5em;
+		padding-left: 2.5em;
+	}
+
+	.humble {
+		background: none;
+		text-align: right;
+		padding-top: 4em;
+		padding-right: 2.5em;
+	}
+
+	/* Third shelf */
+	.quote {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+		margin: 1em;
+		position: relative;
+		font-size: 0.8em;
+		line-height: 1.5;
+	}
+
+	.determined,
+	.sarcastic {
+		grid-column: 1 / span 1;
+		grid-row: 2 / span 1;
+		margin: 0 1em 1em;
+	}
+		
+	.determined {
+		text-align: left;
+		padding-top: 2em;
+		padding-left: 2.5em;
+		background: #eb641a; /* Old browsers */
+		background: -moz-linear-gradient(top, #eb641a 0%, #bf0606 99%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #eb641a 0%,#bf0606 99%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #eb641a 0%,#bf0606 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb641a', endColorstr='#bf0606',GradientType=0 ); /* IE6-9 */
+	}
+
+	.sarcastic {
+		background: none;
+		text-align: right;
+		padding-top: 4.5em;
+		padding-right: 2.5em;
+	}
+
+	.quote footer {
+		position: absolute;
+		right: 1em;
+		bottom: 0.5em;
+		font-size: 0.8em;
+	}
+
+	/* Fourth shelf*/
+	.contact {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+		margin: 1em;
+		font-size: 0.8em;
+		line-height: 1.5;
+	}
+
+	.me {
+		grid-column: 1 / span 1;
+		grid-row: 2 / span 1;
+		margin: 0 1em 1em;
+		padding: 0;
+		background: #bf0606;
+	}
+}
+
+/* 535+ 
+------------------------------------------- */
+@media only screen and (min-width: 30em) {
+	h1 {
+		padding-left: 2em;
+	}
+
+	.keyword {
+		font-size: 1.5em;
+	}
+
+	/* Second shelf */
+	.cssfacts {
+		font-size: 0.8em;
+	}
+
+	/* Third shelf */
+	.quote {
+		font-size: 1em;
+	}
+
+	.quote footer {
+		font-size: 0.7em;
+	}
+}
+
+/* 890+ 
+------------------------------------------- */
+@media only screen and (min-width: 50em) {
+	h1 {
+	font-size: 2.5em;
+	margin-left: 2em;
+	padding-left: 0;
+	}
+
+	.keyword {
+		font-size: 1.25em;
+	}
+
+	.between {
+		visibility: visible;
+	}
+
+	/* General shelf styles */
+	.between {
+		display: grid;
+		grid-gap: 1em;
+		grid-auto-rows: minmax(2em, auto);
+		margin: 0 auto;
+		background-color: #f2f2f2;
+		max-width: 60%;
+		border-left: 0.1em solid #bcaf9b;
+		border-right: 0.1em solid #bcaf9b;
+	}
+
+	.shelf {
+		display: grid;
+		grid-gap: 1em;
+		margin: 0 auto;
+		max-width: 80%;
+		background-color: #f2f2f2;
+		grid-auto-rows: minmax(10em, auto);
+		border: 0.1em solid #bcaf9b;
+	}
+
+	/* First shelf */
+	.designer {
+		margin: 0.75em 0 0.75em 0.75em;
+		grid-column: 1 / span 3;
+		grid-row: 1 / span 1;
+	}
+
+	.resourceful,
+	.creative,
+	.stubborn {
+		grid-column: 4 / span 1;
+		grid-row: 1 / span 1;
+		margin: 1em 1em 1em 0;
+	}
+
+	.resourceful {
+		background: #f6a004;
+		padding-left: 1.5em;
+	}
+
+	.creative {
+		background: none;
+		padding-top: 3em;
+		padding-right: 1em;
+	}
+
+	.stubborn {
+		background: none;
+		padding-top: 5em;
+	}
+
+	/* Second shelf*/
+	.cssfacts {
+		grid-column: 2 / span 3;
+		grid-row: 1 / span 1;
+		margin: 1.5em 1.5em 1.5em 0;
+		padding: 1em 12em 1em 4em;
+		overflow: hidden;
+	}
+
+	.work,
+	.humble {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+		margin: 1em 0.5em 1em 1em;
+	}
+
+	.work {
+		background: #bf0606;
+		padding-top: 1.5em;
+		padding-left: 1em;
+	}
+
+	.humble {
+		background: none;
+		padding-top: 4em;
+	}
+
+	/* Third shelf */
+	.quote {
+		grid-column: 1 / span 3;
+		grid-row: 1 / span 1;
+		margin: 1.25em;
+		position: relative;
+	}
+
+	.determined,
+	.sarcastic {
+		grid-column: 4 / span 1;
+		grid-row: 1 / span 1;
+		margin: 1em 1em 1em 0;
+	}
+
+	.determined {
+		text-align: left;
+		background: #eb641a; /* Old browsers */
+		background: -moz-linear-gradient(top, #eb641a 0%, #bf0606 99%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #eb641a 0%,#bf0606 99%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #eb641a 0%,#bf0606 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb641a', endColorstr='#bf0606',GradientType=0 ); /* IE6-9 */		
+		padding-top: 1.5em;
+	}
+
+	.sarcastic {
+		background: none;
+		text-align: right;
+		padding-top: 4.5em;
+		padding-bottom: 1.5em;
+	}
+
+	/* Fourth shelf*/
+	.contact {
+		grid-column: 2 / span 3;
+		grid-row: 1 / span 1;
+		margin: 1.5em 1.5em 1.5em 0;
+		padding: 2.5em 5em 0 2em;
+		line-height: 1.5;
+	}
+
+	.contact p:nth-child(4) {
+		padding-top: 1em;
+	}
+
+	.me {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+		margin: 1.25em 0.75em 1.25em 1.25em;
+		padding: 0;
+		background: #bf0606;
+	}
+
+	.between:last-child {
+		grid-auto-rows: minmax(3em, auto);
+		grid-column: 2 / span 3;
+		grid-row: 2 / span 1;
+		max-width: 60%;
+		border-left: 0.1em solid #bcaf9b;
+		border-right: 0.1em solid #bcaf9b;
+	}
+
+}
+
+/* 1065+ 
+------------------------------------------- */
+@media only screen and (min-width: 60em) {
+	h1 {
+	font-size: 3em;
+	margin-left: 2.5em;
+	}
+
+	/* General shelf styles */
+	.shelf {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.between {
+		max-width: 60%;
+	}
+
+	/* First shelf */
+	.designer {
+		grid-column: 1 / span 3;
+		margin: 1.2em 0.75em 1.2em 1.2em;
+	}
+
+	/* Second shelf */
+	.cssfacts {
+		padding-left: 8em;
+	}
+
+	/* Third shelf */
+	.contact {
+		padding-left: 8em;
+	}
+
+	.determined {
+		padding-top: 2.5em;
+	}
+
+	.sarcastic {
+		padding-top: 5.5em;
+	}
+
+	.keyword {
+		text-align: center;
+	}
+
+	/* RESOURCCEFUL */
+	.resourceful {
+		letter-spacing: -0.1em;
+		padding: 0.2em 0 0 0;
+		font-variant: small-caps;
+		font-size: 1.3em;
+	}
+
+	.resourceful:first-letter {
+		font-size: 1.5em;
+	}
+
+	.resourceful .second-letter {
+		font-size: 1em;
+	}
+
+	.resourceful .third-letter {
+		font-size: 1.5em;
+	}
+
+	.resourceful .fourth-letter {
+		font-size: 2em;
+	}
+
+	.resourceful .fifth-letter {
+		font-size: 2.5em;
+	}
+
+	.resourceful .sixth-letter {
+		font-size: 2em;
+	}
+
+	.resourceful .seventh-letter {
+		font-size: 2.5em;
+	}
+
+	.resourceful .eighth-letter {
+		font-size: 2em;
+	}
+
+	.resourceful .ninth-letter {
+		font-size: 1.5em;
+	}
+
+	.resourceful .tenth-letter {
+		font-size: 1em;
+	}
+
+	.resourceful .eleventh-letter {
+		font-size: 1.5em;
+	}
+
+	/* CREATIVE */
+	.creative {
+		padding: 3em 0 0 0 ;
+	}
+
+	.creative:first-letter {
+		font-size: 2em;
+		letter-spacing: 0.3em;
+	}
+
+	.creative .second-letter {
+		font-size: 1.8em;
+		letter-spacing: 0.4em;
+	}
+
+	.creative .third-letter {
+		font-size: 1.6em;
+		letter-spacing: 0.5em;
+	}
+
+	.creative .fourth-letter {
+		font-size: 1.4em;
+		letter-spacing: 0.6em;
+	}
+
+	.creative .fifth-letter {
+		font-size: 1.2em;
+		letter-spacing: 0.7em;
+	}
+
+	.creative .sixth-letter {
+		font-size: 1em;
+		letter-spacing: 0.8em;
+	}
+
+	.creative .seventh-letter {
+		font-size: 0.8em;
+		letter-spacing: 0.9em;
+	}
+
+	.creative .eighth-letter {
+		font-size: 0.6em;
+		letter-spacing: 1em;
+	}
+
+	/* STUBBORN */
+	.stubborn {
+		padding: 5em 0 1em 0.3em;
+	}
+
+	.stubborn:first-letter {
+		font-size: 0.6em;
+		letter-spacing: 1em;
+	}
+
+	.stubborn .second-letter {
+		font-size: 0.8em;
+		letter-spacing: 0.9em;
+	}
+
+	.stubborn .third-letter {
+		font-size: 1em;
+		letter-spacing: 0.8em;
+	}
+
+	.stubborn .fourth-letter {
+		font-size: 1.2em;
+		letter-spacing: 0.7em;
+	}
+
+	.stubborn .fifth-letter {
+		font-size: 1.4em;
+		letter-spacing: 0.6em;
+	}
+
+	.stubborn .sixth-letter {
+		font-size: 1.6em;
+		letter-spacing: 0.5em;
+	}
+
+	.stubborn .seventh-letter {
+		font-size: 1.8em;
+		letter-spacing: 0.4em;
+	}
+
+	.stubborn .eighth-letter {
+		font-size: 2em;
+		letter-spacing: 0.3em;
+	}
+
+	/* HARD WORK */
+	.work {
+		letter-spacing: 0em;
+		word-spacing: 0em;
+		padding: 0.4em 0.2em 0 0;
+	}
+
+	.work:first-letter {
+		font-size: 3em;
+	}
+
+	.work .second-letter {
+		font-size: 2.25em;
+	}
+
+	.work .third-letter {
+		font-size: 1.75em;
+	}
+
+	.work .fourth-letter {
+		font-size: 1.25em;
+	}
+
+	.work .fifth-letter {
+		font-size: 1.25em;
+	}
+
+	.work .sixth-letter {
+		font-size: 1.75em;
+	}
+
+	.work .seventh-letter {
+		font-size: 2.25em;
+	}
+
+	.work .eighth-letter {
+		font-size: 3em;
+	}
+
+	/* HUMBLE */
+	.humble {
+		letter-spacing: -0.08em;
+		font-size: 3em;
+		padding: 2em 0 0 0;
+		margin: 0.4em 0.2em 0.4em 0.4em;
+	}
+
+
+	/* DETERMINED */
+	.determined {
+		letter-spacing: 0;
+		padding: 0.2em 0 0 0;
+		font-size: 1.3em;
+	}
+
+	.determined:first-letter {
+		font-size: 1.25em;
+	}
+
+	.determined .second-letter {
+		font-size: 1.75em;
+	}
+
+	.determined .third-letter {
+		font-size: 2em;
+	}
+
+	.determined .fourth-letter {
+		font-size: 2.5em;
+	}
+
+	.determined .fifth-letter {
+		font-size: 3em;
+	}
+
+	.determined .sixth-letter {
+		font-size: 3em;
+	}
+
+	.determined .seventh-letter {
+		font-size: 2.5em;
+	}
+
+	.determined .eighth-letter {
+		font-size: 2em;
+	}
+
+	.determined .ninth-letter {
+		font-size: 1.75em;
+	}
+
+	.determined .tenth-letter {
+		font-size: 1.25em;
+	}
+
+
+	 /* SARCASTIC */
+	 .sarcastic {
+		letter-spacing: 0.2em;
+		padding: 3.5em 0 1em 0;
+		font-size: 1.3em;
+	}
+
+	.sarcastic:first-letter {
+		font-size: 1em;
+	}
+
+	.sarcastic .second-letter {
+		font-size: 2em;
+	}
+
+	.sarcastic .third-letter {
+		font-size: 2.5em;
+	}
+
+	.sarcastic .fourth-letter {
+		font-size: 2em;
+	}
+
+	.sarcastic .fifth-letter {
+		font-size: 1.5em;
+	}
+
+	.sarcastic .sixth-letter {
+		font-size: 2em;
+	}
+
+	.sarcastic .seventh-letter {
+		font-size: 2.5em;
+	}
+
+	.sarcastic .eighth-letter {
+		font-size: 2em;
+	}
+
+	.sarcastic .ninth-letter {
+		font-size: 1.5em;
+	}
+
+	/* CSS FACTS */
+	.cssfacts p:nth-child(2) {
+		margin-left: 3em;
+	}
+
+	.cssfacts .first-fact {
+		padding-left: 4.45em; 
+	}
+
+	.cssfacts p:nth-child(3) {
+		margin-left: 3em;
+	}
+
+	.cssfacts .second-fact {
+		padding-left: 2em; 
+	}
+
+	.cssfacts p:nth-child(4) {
+		margin-left: 3em;
+	}
+
+	.cssfacts .third-fact {
+		padding-left: 3.9em; 
+	}
+
+	.cssfacts p:nth-child(5) {
+		margin-left: 3em;
+	}
+
+	.cssfacts .fourth-fact {
+		padding-left: 3.9em; 
+	}
+
+	.cssfacts p:nth-child(6) {
+		margin-left: 3em;
+	}
+
+	.cssfacts .fifth-fact {
+		padding-left: 0.9em; 
+	}
+
+	.cssfacts p:nth-child(7) {
+		margin-left: 2em;
+		padding: 0.1em 0 0.2em 1.1em;
+	}
+
+	.cssfacts .sixth-fact {
+		padding-left: 0.3em; 
+	}
+
+}
+
+
+
+
